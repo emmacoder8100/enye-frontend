@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const Pagination = ({ page, setPage, totalPages }) => {
 	if (totalPages < 2) return null;
 
@@ -18,7 +20,7 @@ export const Pagination = ({ page, setPage, totalPages }) => {
 				</li>
 				{[...Array(totalPages).keys()].map((key) => {
 					return (
-						<li className={`page-item${page === key + 1 ? " active" : ""}`}>
+						<li key={uuidv4()} className={`page-item${page === key + 1 ? " active" : ""}`}>
 							<button className="page-link" onClick={() => setPage(key + 1)}>
 								{key + 1}
 							</button>

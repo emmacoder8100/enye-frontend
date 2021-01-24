@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { v4 as uuidv4 } from "uuid";
 
 export const TableRecords = ({ records }) => {
 	return (
@@ -28,7 +29,7 @@ export const TableRecords = ({ records }) => {
 						</tr>
 					) : (
 						records.map((profile) => (
-							<tr>
+							<tr key={uuidv4()}>
 								<td>
 									{profile.FirstName} {profile.LastName}
 								</td>

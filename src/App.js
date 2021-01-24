@@ -7,9 +7,9 @@ import { Pagination, SearchAndFilter, TableRecords } from "./components";
 function App() {
 	const [page, setPage] = useState(1);
 	const [error, setError] = useState(null);
-	const [filters, setFilters] = useState({ search: "", gender: "", paymentMethod: "" });
 	const [profiles, setProfiles] = useState([]);
 	const [loading, setLoading] = useState(false);
+	const [filters, setFilters] = useState({ search: "", gender: "", paymentMethod: "" });
 
 	const perPage = 20;
 
@@ -44,8 +44,6 @@ function App() {
 		}
 
 		const filtereredProfile = applyFilter({ profiles, filters });
-
-		console.log({ filtereredProfile, profiles });
 
 		const { results, totalPages } = paginateResult({ page, profiles: filtereredProfile, perPage });
 

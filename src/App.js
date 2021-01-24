@@ -60,14 +60,6 @@ function App() {
 		<>
 			<header className="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
 				<p className="h5 my-0 me-md-auto fw-normal">ENYE Front-End</p>
-				<nav className="my-2 my-md-0 me-md-3">
-					<a className="p-2 text-dark" href="#">
-						Log In
-					</a>
-				</nav>
-				<a className="btn btn-outline-primary" href="#">
-					Sign up
-				</a>
 			</header>
 			<main className="container">
 				<div className="px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">

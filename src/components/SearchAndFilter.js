@@ -1,4 +1,4 @@
-export const SearchAndFilter = ({ filters, setFilters }) => {
+export const SearchAndFilter = ({ filters, setFilters, setPage }) => {
 	return (
 		<div className="row mb-4">
 			<div className="col-12 col-md-6 mb-2 mb-md-0">
@@ -8,7 +8,10 @@ export const SearchAndFilter = ({ filters, setFilters }) => {
 					placeholder="Search"
 					value={filters.search}
 					className="form-control"
-					onChange={(e) => setFilters((values) => ({ ...values, search: e.target.value }))}
+					onChange={(e) => {
+						setPage(1);
+						setFilters((values) => ({ ...values, search: e.target.value }));
+					}}
 				/>
 			</div>
 			<div className="col-12 col-md-6">
@@ -18,6 +21,7 @@ export const SearchAndFilter = ({ filters, setFilters }) => {
 							value={filters.gender}
 							className="form-select"
 							onChange={(e) => {
+								setPage(1);
 								setFilters((values) => ({ ...values, gender: e.target.value }));
 							}}
 						>
@@ -32,6 +36,7 @@ export const SearchAndFilter = ({ filters, setFilters }) => {
 							value={filters.paymentMethod}
 							className="form-select"
 							onChange={(e) => {
+								setPage(1);
 								setFilters((values) => ({ ...values, paymentMethod: e.target.value }));
 							}}
 						>

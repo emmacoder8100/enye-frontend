@@ -17,13 +17,16 @@ export const TableRecords = ({ records }) => {
 						<th scope="col">CreditCardType</th>
 						<th scope="col">DomainName</th>
 						<th scope="col">MacAddress</th>
+						<th scope="col">URL</th>
+						<th scope="col">Latitude</th>
+						<th scope="col">Longitude</th>
 						<th scope="col">LastLogin</th>
 					</tr>
 				</thead>
 				<tbody>
 					{records.length === 0 ? (
 						<tr>
-							<td colSpan={11} className="text-center">
+							<td colSpan={14} className="text-center">
 								No record found!
 							</td>
 						</tr>
@@ -42,6 +45,9 @@ export const TableRecords = ({ records }) => {
 								<td>{profile.CreditCardType}</td>
 								<td>{profile.DomainName}</td>
 								<td>{profile.MacAddress}</td>
+								<td>{profile.URL}</td>
+								<td>{profile.Latitude}</td>
+								<td>{profile.Longitude}</td>
 								<td>{format(new Date(profile.LastLogin), "MMM do, yyyy h:mm a")}</td>
 							</tr>
 						))

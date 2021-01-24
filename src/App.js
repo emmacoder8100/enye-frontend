@@ -49,7 +49,7 @@ function App() {
 
 		return (
 			<>
-				<SearchAndFilter filters={filters} setFilters={setFilters} />
+				<SearchAndFilter filters={filters} setFilters={setFilters} setPage={setPage} />
 				<TableRecords records={results} />
 				<Pagination totalPages={totalPages} page={page} setPage={setPage} />
 			</>
